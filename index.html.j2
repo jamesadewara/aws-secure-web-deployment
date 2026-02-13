@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure App - {{ ansible_hostname }}</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
+        .card { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            display: inline-block;
+        }
+        h1 { color: #232f3e; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Hello, I am James Adewara!</h1>
+        <p><strong>Instance Hostname:</strong> {{ ansible_hostname }}</p>
+        <p><strong>Private IP Address:</strong> {{ ansible_default_ipv4.address }}</p>
+        <hr>
+        <h3>About Me</h3>
+        <p>I am a Junior Cloud Engineer student at AltSchool Africa, specializing in AWS and Automation.</p>
+    </div>
+</body>
+</html>

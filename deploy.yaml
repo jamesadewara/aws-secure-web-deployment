@@ -1,0 +1,25 @@
+- name: Deploy Secure Web Application
+  hosts: webservers # the group name for the private ec2 web servers in the `inventory.ini` file
+  become: yes  # Run as sudo
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Ensure Nginx starts on boot
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy Custom HTML Page
+      template:
+        src: index.html.j2
+        dest: /var/www/html/index.html
+        mode: '0644'
