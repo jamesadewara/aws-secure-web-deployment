@@ -1,1 +1,10 @@
-.pem
+# AWS Private Keys
+*.pem
+*.key
+
+# Ansible files
+.ansible/
+inventory.ini # Only if it contains sensitive IPs or user info!
+
+# Vagrant files
+.vagrant/
